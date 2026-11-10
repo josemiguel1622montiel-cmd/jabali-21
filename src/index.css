@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #0c0c0e;
+    color: #e5e7eb;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, .font-brand {
+    font-family: 'Cinzel', Georgia, serif;
+    letter-spacing: 0.05em;
+  }
+}
+
+/* Custom rustic scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111113;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3d2314;
+  border-radius: 4px;
+  border: 1px solid #c5a059;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7a4e2d;
+}
+
+/* Ember animations */
+@keyframes emberGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(234, 88, 12, 0.3), inset 0 0 10px rgba(197, 160, 89, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(234, 88, 12, 0.6), inset 0 0 15px rgba(197, 160, 89, 0.4);
+  }
+}
+
+.glow-ember {
+  animation: emberGlow 3s infinite ease-in-out;
+}
+
+@keyframes flicker {
+  0% { opacity: 0.95; }
+  25% { opacity: 0.85; }
+  50% { opacity: 1.0; }
+  75% { opacity: 0.9; }
+  100% { opacity: 0.95; }
+}
+
+.animate-flicker {
+  animation: flicker 1.8s infinite;
+}
+
+/* Gold gradient text utility */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #f3dea0 0%, #c5a059 50%, #9e7c38 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Wood border styling */
+.border-wood {
+  border-color: #4a2e1b;
+}
+
+.bg-wood-dark {
+  background-color: #1a0d07;
+}
