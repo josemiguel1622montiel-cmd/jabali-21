@@ -24,7 +24,7 @@ import {
 import { BRAND_IMAGES_LIBRARY, BRAND_IDENTITY } from '../data/brandData';
 import { soundEngine } from '../services/soundEffects';
 
-export default function CommercialStudioView({ products }) {
+export default function CommercialStudioView({ products, onOpenJabaliSpot }) {
   // Generator parameters
   const [selectedProduct, setSelectedProduct] = useState('asado-jabali');
   const [selectedDuration, setSelectedDuration] = useState(30); // 15, 30, 60
@@ -551,6 +551,12 @@ export default function CommercialStudioView({ products }) {
           <CheckCircle2 className="w-4 h-4 text-olivo-400" />
           <span>Motor de Video & Render Activo</span>
         </div>
+        <button
+          onClick={onOpenJabaliSpot}
+          className="px-4 py-2 rounded-xl bg-dorado-500 hover:bg-dorado-400 text-carbon-950 text-sm font-bold transition-colors"
+        >
+          Ver comercial del jabalí
+        </button>
       </div>
 
       {/* Production Controls Bar */}

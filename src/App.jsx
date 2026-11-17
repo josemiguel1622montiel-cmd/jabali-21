@@ -8,12 +8,14 @@ import GraphicStudioView from './components/GraphicStudioView';
 import ProductCatalogView from './components/ProductCatalogView';
 import AIAgentChatView from './components/AIAgentChatView';
 import SettingsModal from './components/SettingsModal';
+import JabaliCommercialModal from './components/JabaliCommercialModal';
 
 import { INITIAL_CALENDAR_DAYS, INITIAL_PRODUCTS, BRAND_IDENTITY } from './data/brandData';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  const [isJabaliCommercialOpen, setIsJabaliCommercialOpen] = useState(true);
 
   // Persistence in localStorage
   const [calendarDays, setCalendarDays] = useState(() => {
@@ -112,6 +114,7 @@ export default function App() {
         {activeTab === 'commercials' && (
           <CommercialStudioView
             products={products}
+            onOpenJabaliSpot={() => setIsJabaliCommercialOpen(true)}
           />
         )}
 
@@ -178,6 +181,10 @@ export default function App() {
         calendarDays={calendarDays}
         products={products}
         onRestoreDefaults={handleRestoreDefaults}
+      />
+      <JabaliCommercialModal
+        isOpen={isJabaliCommercialOpen}
+        onClose={() => setIsJabaliCommercialOpen(false)}
       />
     </div>
   );
